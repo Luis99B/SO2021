@@ -12,6 +12,7 @@ void signalHandler(int sig){
 int main(){
 	var = 1;
 	signal(2, signalHandler);
+	signal(15, signalHandler);
 	while(var){
 		printf("Trabajando\n");
 		sleep(1);
