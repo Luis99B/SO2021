@@ -14,6 +14,10 @@ int main(int argc, char **argv){
 	while(fread(&student, sizeof(student), 1, forigen) != 0){
 		size++;
 	}
+	if(size == 0){
+		printf("No hay datos, el archivo esta vacio\n");
+		return -1;
+	}
 	rewind(forigen);
 	int found = 0;
 	for(int i = 0; i < size; i++){
@@ -53,7 +57,7 @@ int main(int argc, char **argv){
 				found++;
 			}
 		}else{
-			printf("%s no es un parametro de busqueda\n", parameter);
+			printf("%s no es un parametro valido\n", parameter);
 			return -1;
 		}
 	}
